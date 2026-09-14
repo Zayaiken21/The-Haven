@@ -1,44 +1,13 @@
-# The Haven
+# The Haven Web
 
-The Haven is a browser-local, deterministic coding workshop.
+Static GitHub Pages frontend for The Haven.
 
-## Important engineering truth
+## Deploy
+1. Put this folder in its own GitHub repository, e.g. `the-haven-web`.
+2. Enable GitHub Pages.
+3. Deploy the separate `the-haven-engine` repository to Render.
+4. Open the Pages site, paste the Render URL into Engine URL, and press Connect.
 
-The Haven is **not an AI**. It does not reason like a large language model and it cannot honestly guarantee that arbitrary programs are 100% correct. Instead, it can become highly reliable by using:
+The browser never receives a GitHub write token. Storage and GitHub backup are handled by the engine.
 
-- deterministic templates
-- language grammars and parsers
-- formatters
-- linters
-- compilers/interpreters
-- test generation and execution
-- project manifests
-- dependency rules
-- file/folder schemas
-- reproducible builds
-
-This first version is intentionally small and GitHub Pages compatible.
-
-## Run
-
-Upload the contents of this folder to a GitHub repository and enable GitHub Pages for the repository.
-
-Open `index.html`.
-
-No API key is required and no AI service is called.
-
-## What this version does
-
-- Builds deterministic starter projects
-- Supports Web, HTML games, Node.js, Python and static projects
-- Creates a project file tree
-- Lets you edit generated files
-- Performs basic validation
-- Speaks status messages using the browser's Speech Synthesis API
-- Downloads the project as a ZIP without an external ZIP library
-
-## Roadmap to a serious "all-language" Haven
-
-A true universal coding system needs a language registry, parser/compiler adapters, test runner, project graph, package/dependency resolver, sandbox, build cache and extensive test suites.
-
-Those pieces should be added incrementally rather than pretending a static webpage can compile every language inside a browser.
+GitHub Pages is static; it is not the correct place to store unlimited memory or uploaded media.

@@ -1,72 +1,23 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#111827">
-  <title>The Haven — Deterministic Code Workshop</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Haven Web</title><link rel="stylesheet" href="styles.css"></head>
 <body>
-  <header class="topbar">
-    <div>
-      <h1>The Haven</h1>
-      <p>A deterministic coding workshop — no AI required.</p>
-    </div>
-    <button id="speakBtn" class="secondary">🔊 Speak</button>
-  </header>
-
-  <main class="layout">
-    <section class="panel">
-      <h2>Build a project</h2>
-      <label>Project name
-        <input id="projectName" value="My-Haven-Project" maxlength="60">
-      </label>
-      <label>Project type
-        <select id="projectType">
-          <option value="web">Web App</option>
-          <option value="game">HTML Game</option>
-          <option value="node">Node.js App</option>
-          <option value="python">Python App</option>
-          <option value="static">Static Website</option>
-        </select>
-      </label>
-      <label>What should it do?
-        <textarea id="request" placeholder="Example: Make a simple space game with a player, score, keyboard controls, and restart button."></textarea>
-      </label>
-      <div class="buttons">
-        <button id="buildBtn">⚙️ Build Project</button>
-        <button id="clearBtn" class="secondary">Clear</button>
-      </div>
-      <p class="note">The Haven uses rules, templates, validators, and a local project model. It does not call an AI API.</p>
-    </section>
-
-    <section class="panel">
-      <div class="section-head">
-        <h2>Project tree</h2>
-        <button id="downloadBtn" class="secondary" disabled>⬇ Download ZIP</button>
-      </div>
-      <pre id="tree" class="tree">No project yet.</pre>
-    </section>
-
-    <section class="panel wide">
-      <div class="section-head">
-        <h2>Generated files</h2>
-        <span id="status">Ready.</span>
-      </div>
-      <div id="fileTabs" class="tabs"></div>
-      <textarea id="editor" spellcheck="false" aria-label="Generated file editor"></textarea>
-      <div class="buttons">
-        <button id="saveBtn" disabled>💾 Save File</button>
-        <button id="validateBtn" disabled>✓ Validate</button>
-      </div>
-      <pre id="output" class="output">The Haven is ready.</pre>
-    </section>
-  </main>
-
-  <footer>
-    The Haven v1 • Browser-local • No external AI services • GitHub Pages compatible
-  </footer>
-  <script src="app.js"></script>
-</body>
-</html>
+<header><div><h1>🏠 The Haven</h1><p>Deterministic coding workshop • Web interface</p></div><span id="connection">● Not connected</span></header>
+<main>
+<section class="chat panel"><div id="messages" class="messages"><div class="msg system">Welcome to The Haven. I can help design projects, organize files, answer engineering questions, and send build jobs to your Haven Engine.</div></div>
+<div class="composer"><textarea id="prompt" placeholder="Ask The Haven to build a game, app, website, organize files, explain code, or answer a question…"></textarea><button id="send">Send</button></div></section>
+<aside class="panel">
+<h2>Workspace</h2>
+<label>Engine URL<input id="engineUrl" placeholder="https://your-haven-engine.onrender.com"></label>
+<button id="connect" class="secondary">Connect</button>
+<hr>
+<button id="uploadBtn">📁 Upload files</button><input id="files" type="file" multiple hidden>
+<button id="build" class="secondary">⚙ Build current request</button>
+<button id="download" class="secondary" disabled>⬇ Download project ZIP</button>
+<div id="filesList"></div>
+</aside>
+</main>
+<footer>No AI API is used by this interface. The engine uses deterministic rules, templates, validators, and local/server storage.</footer>
+<script src="app.js"></script>
+</body></html>
