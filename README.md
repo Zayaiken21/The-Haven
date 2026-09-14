@@ -1,8 +1,11 @@
-# The Haven Web
+# The Haven — Free Deployment Package
 
-Static GitHub Pages frontend. The Render engine URL is configured in `app.js`, not entered by the user.
+GitHub Pages frontend + Render Free FastAPI backend. The frontend never waits for Render before loading.
 
-Frontend: https://zayaiken21.github.io/The-Haven/
-Engine: https://haven-engine.onrender.com
+## Important free-plan behavior
+Render Free web services can spin down after inactivity and may take about a minute to wake. The UI therefore loads immediately and connects in the background. This is expected platform behavior, not a frontend freeze.
 
-Do not put API keys in this repository.
+The free plan has no persistent disk. Workspace files, uploads and engine memory are temporary. Keep important source in GitHub or add a durable datastore later.
+
+## Current engine
+The Haven provides deterministic project scaffolds, language classification, validation, packaging, game/app/web templates, and UX/UI specifications. A general-purpose generative model is not bundled; a server-side model adapter can be added with a provider API key stored in Render environment variables.
