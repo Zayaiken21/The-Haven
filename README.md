@@ -1,11 +1,14 @@
-# The Haven — Free Deployment Package
+# 🏠 The Haven v6
 
-GitHub Pages frontend + Render Free FastAPI backend. The frontend never waits for Render before loading.
+The Haven is a web-hosted engineering workshop for coding, games, apps and UX/UI.
 
-## Important free-plan behavior
-Render Free web services can spin down after inactivity and may take about a minute to wake. The UI therefore loads immediately and connects in the background. This is expected platform behavior, not a frontend freeze.
+- GitHub Pages frontend
+- Render FastAPI backend
+- Free-plan compatible; no persistent disk
+- Immediate frontend startup; backend connection is non-blocking
+- Multi-language catalog and scaffolding
+- 2D/3D game and app scaffolds
+- UX/UI specifications and accessibility states
+- ZIP project packaging
 
-The free plan has no persistent disk. Workspace files, uploads and engine memory are temporary. Keep important source in GitHub or add a durable datastore later.
-
-## Current engine
-The Haven provides deterministic project scaffolds, language classification, validation, packaging, game/app/web templates, and UX/UI specifications. A general-purpose generative model is not bundled; a server-side model adapter can be added with a provider API key stored in Render environment variables.
+The built-in engine is deterministic. Add a server-side model adapter for open-ended generative coding.
