@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>The Haven — Deterministic Code Workshop</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>The Haven</h1>
+      <p>A deterministic coding workshop — no AI required.</p>
+    </div>
+    <button id="speakBtn" class="secondary">🔊 Speak</button>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <h2>Build a project</h2>
+      <label>Project name
+        <input id="projectName" value="My-Haven-Project" maxlength="60">
+      </label>
+      <label>Project type
+        <select id="projectType">
+          <option value="web">Web App</option>
+          <option value="game">HTML Game</option>
+          <option value="node">Node.js App</option>
+          <option value="python">Python App</option>
+          <option value="static">Static Website</option>
+        </select>
+      </label>
+      <label>What should it do?
+        <textarea id="request" placeholder="Example: Make a simple space game with a player, score, keyboard controls, and restart button."></textarea>
+      </label>
+      <div class="buttons">
+        <button id="buildBtn">⚙️ Build Project</button>
+        <button id="clearBtn" class="secondary">Clear</button>
+      </div>
+      <p class="note">The Haven uses rules, templates, validators, and a local project model. It does not call an AI API.</p>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <h2>Project tree</h2>
+        <button id="downloadBtn" class="secondary" disabled>⬇ Download ZIP</button>
+      </div>
+      <pre id="tree" class="tree">No project yet.</pre>
+    </section>
+
+    <section class="panel wide">
+      <div class="section-head">
+        <h2>Generated files</h2>
+        <span id="status">Ready.</span>
+      </div>
+      <div id="fileTabs" class="tabs"></div>
+      <textarea id="editor" spellcheck="false" aria-label="Generated file editor"></textarea>
+      <div class="buttons">
+        <button id="saveBtn" disabled>💾 Save File</button>
+        <button id="validateBtn" disabled>✓ Validate</button>
+      </div>
+      <pre id="output" class="output">The Haven is ready.</pre>
+    </section>
+  </main>
+
+  <footer>
+    The Haven v1 • Browser-local • No external AI services • GitHub Pages compatible
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
